@@ -1,0 +1,272 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+    <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <script src="~/js/Chart.min.js"></script>
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <link rel="stylesheet" href="~/Content/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <script src="https://kit.fontawesome.com/cc954f37ac.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="icon/css/fontawesome-all.svg">|
+        <link rel="stylesheet" href="~/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <!-- Bootstrap CSS -->
+        <title>Hello, world!</title>
+        <style>
+
+            .frame {
+                width: 40%;
+                border-radius: 4px;
+                background: #ededed;
+                padding: 20px;
+                margin: 150px auto;
+            }
+
+            body .frame .content h1 {
+                margin: 0 0 10px 0;
+                text-align: center;
+                color: white;
+                font-weight: 100;
+                text-transform: uppercase;
+            }
+
+            #svg {
+                width: 785px;
+                height: 300px;
+            }
+
+            .content {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a><img src="/images/study1.png" class="logo" alt="isofh"><div style="display: inline; margin-left: 5px;">Học trực tuyến</div></a>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="#"><i class="icon-min fas fa-chart-bar"></i>Tổng quan</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-min fas fa-book"></i>Bài tập</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-min far fa-clock"></i>Lịch học</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-min fas fa-archive"></i>Kho tài liệu</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-min fas fa-cogs"></i>Thiết lập</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Page Content  -->
+            <div id="content">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <button type="button" id="sidebarCollapse" class="btn">
+                            <i class="icon-min fas fa-bars"></i>
+                            <span>Tổng quan</span>
+                        </button>
+                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-align-justify"></i>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span>Năm học</span>
+                                        <select>
+                                            <option>2018-2019</option>
+                                            <option>2018-2019</option>
+                                            <option>2018-2019</option>
+                                            <option>2018-2019</option>
+                                        </select>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fas fa-pencil-alt"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="icon-min fas fa-bell"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span>Tạ Minh Ngọc</span>
+                                        <img class="icon-min bo" aria-hidden="true" src="https://lh3.googleusercontent.com/a-/AOh14GhIFpsZ4OSxacLxwMRIvVJ-t670YHE-dO0MS7uB=s32-c">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container-fluid">
+                    <div class="row m-4">
+                        <div class="col-sm-8">
+                            <div class="comp-top">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="p-3 bg-white rounded">
+                                            <h6>Số lớp phụ trách</h6>
+                                            <h1 class="font-weight-bold">1</h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="p-3 bg-white rounded">
+                                            <h6>Bài tập lưu nháp</h6>
+                                            <h1 class="font-weight-bold">1</h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="p-3 bg-white rounded">
+                                            <h6>Bài tập đã gửi</h6>
+                                            <h1 class="font-weight-bold">1</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comp-center bg-white p-3 mt-3 rounded">
+                                <h5>Thống kê tình hình nộp bài</h5>
+                                <div class="btn-group col -12 btn-length">
+                                    <button type="button" class="btn text-left col-12 border dropdown-toggle" data-toggle="dropdown">
+                                        <span>Bài tập tuần 1 [lớp 5A]</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button">Bài tập tuần 2[lớp 5A]</button>
+                                        <button class="dropdown-item" type="button">Bài tập tuần 3[lớp 5A]</button>
+                                        <button class="dropdown-item" type="button">Bài tập tuần 4[lớp 5A]</button>
+                                    </div>
+                                </div>
+                                <div class="chart w-50">
+                                    <svg id="svg"></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="content-right-top h-50 bg-white mb-3 p-3 rounded border">
+                                <h5 class="mb-3">Lịch dạy trực tuyến sắp tới</h5>
+                                <div class="schelule-list">
+                                    <div class="schedule-item d-flex rounded">
+                                        <img class="icon text-center" src="https://d24cgw3uvb9a9h.cloudfront.net/static/93889/image/new/home/solution_collaboration_center.png">
+                                        <div class="m-3">
+                                            <div>Nhiều hơn, ít hơn</div>
+                                            <div class="time-study">Giờ học: 10:30 ngày 01/04/2020</div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="schedule-item d-flex rounded">
+                                        <img class="icon text-center" src="https://d24cgw3uvb9a9h.cloudfront.net/static/93889/image/new/home/solution_collaboration_center.png">
+                                        <div class="m-3">
+                                            <div>Hình vuông, hình tròn</div>
+                                            <div class="time-study">Giờ học: 10:30 ngày 01/04/2020</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-right-top  h-50 bg-white mb-3 p-3 rounded border">
+                                <h5 class="mb-3">Bài tập sắp đến hạn</h5>
+                                <div class="schelule-list">
+                                    <div class="schedule-item d-flex rounded">
+                                        <img class="icon text-center" src="https://d24cgw3uvb9a9h.cloudfront.net/static/93889/image/new/home/solution_collaboration_center.png">
+                                        <div class="m-3">
+                                            <div>Bài tập tuần 1</div>
+                                            <div class="time-study">Giờ học: 10:30 ngày 01/04/2020</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="schedule-item d-flex rounded">
+                                        <img class="icon text-center" src="https://d24cgw3uvb9a9h.cloudfront.net/static/93889/image/new/home/solution_collaboration_center.png">
+                                        <div class="m-3">
+                                            <div>Bài tập tuần 1</div>
+                                            <div class="time-study">Giờ học: 10:30 ngày 01/04/2020</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript">
+  $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+        </script>
+
+
+
+
+        <!-- Optional JavaScript -->
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js'></script>
+        <script>
+var programmingSkills = [
+    {
+        value: 10,
+        label: 'Đã nộp bài',
+        color: '#3399FF'
+    },
+    {
+        value: 23,
+        label: 'Chưa nộp bài',
+        color: '#FFC575'
+    },
+    {
+        value: 67,
+        label: 'Nộp bài muộn',
+        color: '#99CC00'
+    }
+];
+        </script>
+        <script src="svg-donut-chart-framework.js"></script>
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+        </script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="~/js/jquery.min.js"></script>
+        <script src="~/js/popper.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/main.js"></script>
+        <script type="text/javascript" src="chart.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        
+    </body>
+    </html>
+

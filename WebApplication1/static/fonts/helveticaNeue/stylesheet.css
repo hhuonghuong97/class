@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'utm_helvebold';
+    src: url('utm_helvebold.woff2') format('woff2'),
+         url('utm_helvebold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'utm_helveregular';
+    src: url('utm_helve.woff2') format('woff2'),
+         url('utm_helve.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
